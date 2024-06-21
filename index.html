@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #result {
+            display: none;
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #ff4444;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #00FF00;
+            border-right: 2px solid #ff4444;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1000;
+        }
+        .sidebar button {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #660000;
+            color: #ff4444;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #ff4444;
+            color: #660000;
+        }
+    </style>
+</head>
+
+<button onclick="toggleSidebar()" style="position: fixed; top: 10px; left: 10px; font-size: 24px;">≡</button>
+    <div class="sidebar" id="sidebar">
+        <button onclick="showRedeemAlert()">Group Wa</button>
+        <button onclick="contactDev()">Coomingsoon</button>
+        <button onclick="apiDoc()">Coomingsoon</button>
+        <button onclick="toggleSidebar()">Kembali</button>
+    </div>
+    
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="px-[20px]">
+        <div class="bg-white py-[40px] px-[60px] rounded-[10px] shadow border max-w-[700px]">
+            <p class="text-center font-bold text-[25px]">Cek Khodam Online By Lana</p>
+            <input 
+                id="nameInput"
+                class="flex-grow border p-2 w-full h-[40px] rounded-[5px] mt-[40px]"
+                type="text"
+                placeholder="Masukkan Nama Anda.."
+            >
+            <div class="flex justify-center flex-wrap items-center gap-[20px] mt-[10px]">
+                <button 
+                    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded"
+                    onclick="cekKhodam()"
+                >
+                    Cek Khodam
+                </button>
+                <button 
+                    class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded"
+                    onclick="resetForm()"
+                >
+                    Reset
+                </button>
+            </div>
+            <p id="result" class="text-[18px] mt-[20px] text-center">Khodam Anda Adalah: <span id="khodamName"></span></p>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 © Lana Lagi Sad
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
